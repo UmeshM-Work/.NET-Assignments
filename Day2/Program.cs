@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ namespace Assignment
         {
 
             Employee o1 = new Employee("Amol", 123465, 10);
-            Console.WriteLine("Employee id : "+ " "+ o1.EMPNO);
+            Console.WriteLine("Employee id : " + " " + o1.EMPNO);
             Console.WriteLine("Employee name : " + " " + o1.NAME);
             Console.WriteLine("Employee Basic Salary : " + " " + o1.BASIC);
             Console.WriteLine("Employee DEPTNO : " + " " + o1.DEPTNO);
@@ -23,15 +23,21 @@ namespace Assignment
             Console.WriteLine("Employee id : " + " " + o2.EMPNO);
             Console.WriteLine("Employee name : " + " " + o2.NAME);
             Console.WriteLine("Employee Basic Salary : " + " " + o2.BASIC);
+            Console.WriteLine("Employee DEPTNO : " + " " + o2.DEPTNO);
             Console.WriteLine(" ");
 
             Employee o3 = new Employee("Amol");
             Console.WriteLine("Employee id : " + " " + o3.EMPNO);
             Console.WriteLine("Employee name : " + " " + o3.NAME);
+            Console.WriteLine("Employee Basic Salary : " + " " + o3.BASIC);
+            Console.WriteLine("Employee DEPTNO : " + " " + o3.DEPTNO);
             Console.WriteLine(" ");
 
             Employee o4 = new Employee();
             Console.WriteLine("Employee id : " + " " + o4.EMPNO);
+            Console.WriteLine("Employee name : " + " " + o4.NAME);
+            Console.WriteLine("Employee Basic Salary : " + " " + o4.BASIC);
+            Console.WriteLine("Employee DEPTNO : " + " " + o4.DEPTNO);
 
 
             #region Testcases
@@ -55,9 +61,10 @@ namespace Assignment
     {
 
         private String name;
-        public static int Empno;
+        public int Empno;
         private Decimal Basic;
         private short DeptNo;
+        private static int count = 1;
 
 
         #region property
@@ -173,30 +180,35 @@ namespace Assignment
         public Employee(String n,Decimal b,short d)
         {
             this.NAME = n;
-            Empno++;
-            this.Basic = b;
+            Empno= count++;
+            this.BASIC = b;
             this.DEPTNO = d;
         }
 
         public Employee(String n, Decimal b)
         {
             this.NAME = n;
-
-            Empno++;
-            this.Basic = b;
+           Empno= count++;
+            this.BASIC = b;
+            this.DEPTNO = 10;
         }
 
         public Employee(String n)
         {
             this.NAME = n;
-            Empno++;
+            Empno = count++;
+            this.BASIC = 283920;
+            this.DEPTNO = 10;
         }
 
         public Employee()
         {
 
-            Empno++;
-                
+            this.NAME = "Ramesh";
+            Empno = count++;
+            this.BASIC = 102039;
+            this.DEPTNO = 20;
+
         }
 
         #endregion
