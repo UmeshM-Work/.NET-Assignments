@@ -16,6 +16,7 @@ namespace Assignment
             Console.WriteLine("Employee name : " + " " + o1.NAME);
             Console.WriteLine("Employee Basic Salary : " + " " + o1.BASIC);
             Console.WriteLine("Employee DEPTNO : " + " " + o1.DEPTNO);
+            Console.WriteLine("Net Salary : " + " " + o1.GetNetSalary());
             Console.WriteLine(" ");
 
 
@@ -24,6 +25,7 @@ namespace Assignment
             Console.WriteLine("Employee name : " + " " + o2.NAME);
             Console.WriteLine("Employee Basic Salary : " + " " + o2.BASIC);
             Console.WriteLine("Employee DEPTNO : " + " " + o2.DEPTNO);
+            Console.WriteLine("Net Salary : " + " " + o1.GetNetSalary());
             Console.WriteLine(" ");
 
             Employee o3 = new Employee("Amol");
@@ -31,6 +33,7 @@ namespace Assignment
             Console.WriteLine("Employee name : " + " " + o3.NAME);
             Console.WriteLine("Employee Basic Salary : " + " " + o3.BASIC);
             Console.WriteLine("Employee DEPTNO : " + " " + o3.DEPTNO);
+            Console.WriteLine("Net Salary : " + " " + o1.GetNetSalary());
             Console.WriteLine(" ");
 
             Employee o4 = new Employee();
@@ -38,6 +41,7 @@ namespace Assignment
             Console.WriteLine("Employee name : " + " " + o4.NAME);
             Console.WriteLine("Employee Basic Salary : " + " " + o4.BASIC);
             Console.WriteLine("Employee DEPTNO : " + " " + o4.DEPTNO);
+            Console.WriteLine("Net Salary : " + " " + o1.GetNetSalary());
 
 
             #region Testcases
@@ -166,8 +170,13 @@ namespace Assignment
         #region GETSALARY
         public decimal GetNetSalary()
         {
+            if (BASIC > 100000 && BASIC <= 1000000)
+            {
+                decimal netSal = BASIC + 1000;
+                return netSal;
+            }
+            return BASIC;
 
-            return 12 * Basic;
 
         }
         #endregion
@@ -175,40 +184,14 @@ namespace Assignment
         #endregion
 
 
-        #region  Contructor and param- Constructor
+        #region  param-Contructor and giving default value
 
-        public Employee(String n,Decimal b,short d)
+        public Employee(String n="Ramesh",Decimal b= 100002, short d=10)
         {
             this.NAME = n;
             Empno= count++;
             this.BASIC = b;
             this.DEPTNO = d;
-        }
-
-        public Employee(String n, Decimal b)
-        {
-            this.NAME = n;
-           Empno= count++;
-            this.BASIC = b;
-            this.DEPTNO = 10;
-        }
-
-        public Employee(String n)
-        {
-            this.NAME = n;
-            Empno = count++;
-            this.BASIC = 283920;
-            this.DEPTNO = 10;
-        }
-
-        public Employee()
-        {
-
-            this.NAME = "Ramesh";
-            Empno = count++;
-            this.BASIC = 102039;
-            this.DEPTNO = 20;
-
         }
 
         #endregion
